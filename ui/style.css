@@ -28,6 +28,7 @@ body {
     font-family:sans-serif;
 }
 .style{
+    margin-left:50px;
     min-height: 250px;
     display: inline;
     width: 100%;
