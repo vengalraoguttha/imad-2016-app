@@ -27,3 +27,8 @@ body {
     padding-right:10px;
     font-family:sans-serif;
 }
+.style{
+    min-height: 250px;
+    display: inline;
+    width: 100%;
+}
