@@ -28,8 +28,10 @@ body {
     font-family:sans-serif;
 }
 .style{
-    margin-left:50px;
+    margin-left: auto;
     min-height: 250px;
     display: inline;
     width: 100%;
+    font: -webkit-mini-control;
+    border: burlywood;
 }
