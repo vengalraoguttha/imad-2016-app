@@ -25,7 +25,7 @@ function loadRegistration(){
           }
         };
         // Make the request
-            if(password1===password2){
+            if(password1.value===password2.value){
                 var username = document.getElementById('username').value;
                 var password = document.getElementById('password1').value;
                 console.log(username);
