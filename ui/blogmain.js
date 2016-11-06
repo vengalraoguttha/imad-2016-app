@@ -58,7 +58,7 @@ function loadLogin () {
         }
     };
     
-    request.open('GET', '/check-login', true);
+    request.open('GET', '/check-login-blog', true);
     request.send(null);
 }
 loadlogin();
