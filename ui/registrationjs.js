@@ -1,4 +1,4 @@
-loadRegistration(){
+function loadRegistration(){
     
     var username=document.getElementById('username');
     var password1=document.getElementById('password1');
