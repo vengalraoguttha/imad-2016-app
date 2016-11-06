@@ -1,4 +1,4 @@
-function loadlogin(){
+function loadLoginForm(){
     
     var loginHtml = `Username:<input type="text" id="username"/><br>
             Password:<input type="password" id="password"><br>
