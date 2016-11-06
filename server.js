@@ -84,6 +84,21 @@ app.get('/hash/:input', function(req, res) {
    res.send(hashedString);
 });
 
+app.post('/registration-blog',function(req,res){
+   var username = req.body.username;
+   var password = req.body.password;
+   var email=req.body.email;
+   var salt = crypto.randomBytes(128).toString('hex');
+   var dbString = hash(password, salt);
+   pool.query('INSERT INTO blog_user (username, password,email) VALUES ($1, $2, $3)', [username, dbString,email], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send('User successfully created: ' + username);
+      }
+   });
+});
+
 app.post('/create-user', function (req, res) {
    // username, password
    // {"username": "tanmai", "password": "password"}
