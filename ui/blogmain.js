@@ -97,6 +97,6 @@ function loadArticles () {
     request.send(null);
 }
 
-loadlogin();
+loadLogin();
 
 loadArticles();
