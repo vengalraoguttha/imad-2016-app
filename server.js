@@ -134,9 +134,6 @@ app.post('/login', function (req, res) {
    });
 });
 
-app.get('/blog.html',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
-});
 
 app.get('/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
@@ -240,3 +237,12 @@ var port = 8080; // Use 8080 for local development because you might already hav
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
+
+app.get('/blog.html',function(req,res){
+    res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+});
+
+app.get('/registration.html',function(req,res){
+    res.sendFile(path.join(__dirname, 'ui', 'registration.html'));
+});
+
