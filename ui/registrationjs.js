@@ -28,11 +28,12 @@ function loadRegistration(){
             if(password1.value===password2.value){
                 var username = document.getElementById('username').value;
                 var password = document.getElementById('password1').value;
+                var email=document.getElementById('email').value;
                 console.log(username);
                 console.log(password);
-                request.open('POST', '/login', true);
+                request.open('POST', '/registration-blog', true);
                 request.setRequestHeader('Content-Type', 'application/json');
-                request.send(JSON.stringify({username: username, password: password}));  
+                request.send(JSON.stringify({username: username, password: password,email:email}));  
                 submit.value = 'Registering...';
             }else{
                 alert('enter the password correctly');
