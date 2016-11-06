@@ -12,6 +12,7 @@ function loadlogin(){
                   // Take some action
                   if (request.status === 200) {
                       submit.value = 'Sucess!';
+                      request.open('GET','/blog-main',true);
                   } else if (request.status === 403) {
                       submit.value = 'Invalid credentials. Try again?';
                   } else if (request.status === 500) {
