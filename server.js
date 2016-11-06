@@ -24,8 +24,8 @@ app.use(session({
 
 function createTemplate (data) {
     var title = data.title;
-    var date = data.date;
-    var heading = data.heading;
+    // var date = data.date;
+    // var heading = data.heading;
     var content = data.content;
     
     var htmlTemplate = `
@@ -40,7 +40,7 @@ function createTemplate (data) {
       <body>
           <div class="container">
               <div>
-                  <a href="/">Home</a>
+                  <a href="/blog.html">Home</a>
               </div>
               <hr/>
               <h3>
