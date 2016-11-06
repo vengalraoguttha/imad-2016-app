@@ -1,4 +1,13 @@
 function loadlogin(){
+    
+    var loginHtml = `Username:<input type="text" id="username"/><br>
+            Password:<input type="password" id="password"><br>
+            <input type="submit" value="submit" id="btn_login"><br>
+            <a href="/registration.html">not yet registered..</a>
+        `;
+    document.getElementById('login_area').innerHTML = loginHtml;
+    
+    
     var username=document.getElementById("username");
     var password=document.getElementById("password");
     var submit=document.getElementById("btn_login");
