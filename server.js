@@ -84,21 +84,6 @@ app.get('/hash/:input', function(req, res) {
    res.send(hashedString);
 });
 
-app.post('/registration-blog',function(req,res){
-   var username = req.body.username;
-   var password = req.body.password;
-   var email=req.body.email;
-   var salt = crypto.randomBytes(128).toString('hex');
-   var dbString = hash(password, salt);
-   pool.query('INSERT INTO blog_user (username, password,email) VALUES ($1, $2, $3)', [username, dbString,email], function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send('User successfully created: ' + username);
-      }
-   });
-});
-
 app.post('/create-user', function (req, res) {
    // username, password
    // {"username": "tanmai", "password": "password"}
@@ -294,3 +279,37 @@ app.get('/registration.html',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'registration.html'));
 });
 
+app.post('/registration-blog',function(req,res){
+   var username = req.body.username;
+   var password = req.body.password;
+   var email=req.body.email;
+   var salt = crypto.randomBytes(128).toString('hex');
+   var dbString = hash(password, salt);
+   pool.query('INSERT INTO blog_user (username, password,email) VALUES ($1, $2, $3)', [username, dbString,email], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send('User successfully created: ' + username);
+      }
+   });
+});
+
+app.get('/check-login-blog', function (req, res) {
+   if (req.session && req.session.auth && req.session.auth.userId) {
+       // Load the user object
+       pool.query('SELECT * FROM blog_user WHERE id = $1', [req.session.auth.userId], function (err, result) {
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              res.send(result.rows[0].username);    
+           }
+       });
+   } else {
+       res.status(400).send('You are not logged in');
+   }
+});
+
+app.get('/logout-blog', function (req, res) {
+   delete req.session.auth;
+   res.send('<html><body>Logged out!<br/><br/><a href="/blog.html">Back to blog</a></body></html>');
+});
