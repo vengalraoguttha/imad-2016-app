@@ -13,7 +13,8 @@ function writeArticle(){
                   // Take some action
                   if (request.status === 200) {
                       submit.value = 'article uploaded sucessfully!';
-                      request.open("GET","/blog.html",true);
+                      var r=new XMLHttpRequest();
+                      r.open("GET","/blog.html",true);
                   } else if (request.status === 403) {
                       submit.value = 'Invalid credentials. Try again?';
                   } else if (request.status === 500) {
