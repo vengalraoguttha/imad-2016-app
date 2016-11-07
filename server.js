@@ -315,9 +315,10 @@ app.post('/insert-article', function (req, res) {
    // {"username": "tanmai", "password": "password"}
    // JSON
    var title = req.body.title;
-   var heading = req.body.heading;
+   var head = req.body.head;
    var content=req.body.content;
-   pool.query('INSERT INTO article (title,content, heading) VALUES ($1, $2, $3)', [title, content, heading], function (err, result) {
+  
+   pool.query('INSERT INTO article (title,content, heading) VALUES ($1, $2, $3)', [title, content, head], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
