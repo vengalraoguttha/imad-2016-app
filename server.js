@@ -321,7 +321,7 @@ app.post('/insert-article', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-          res.send('Article sucessfully uploaded :' title);
+          res.send('Article sucessfully uploaded :'+ title);
       }
    });
 });
