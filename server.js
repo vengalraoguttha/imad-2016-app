@@ -316,3 +316,13 @@ app.get('/articles/:articleName', function (req, res) {
     }
   });
 });
+
+app.get('/article-write',function(req,res){
+    if(req.session && req.session.auth && req.session.auth.userId){
+        
+    }else{
+        res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+    }
+});
+
+
