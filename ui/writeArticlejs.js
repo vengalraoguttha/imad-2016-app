@@ -28,12 +28,13 @@ function writeArticle(){
             };
             
             // Make the request
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            request.open('POST', '/login-blog', true);
+            var title = document.getElementById('title').value;
+            var head = document.getElementById('heading').value;
+            var content = document.getElementById('article').value;
+            request.open('POST', '/insert-article', true);
             request.setRequestHeader('Content-Type', 'application/json');
-            request.send(JSON.stringify({username: username, password: password}));  
-            submit.value = 'Logging in...';
+            request.send(JSON.stringify({title: title, head: head,content:content}));  
+            submit.value = 'uploading article...';
     };
 }
 
