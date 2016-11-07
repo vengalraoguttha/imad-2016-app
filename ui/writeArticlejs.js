@@ -22,7 +22,7 @@ function writeArticle(){
                       alert('Something went wrong on the server');
                       submit.value = 'publish';
                   }
-                  loadLogin();
+                 // loadLogin();
               }  
               // Not done yet
             };
