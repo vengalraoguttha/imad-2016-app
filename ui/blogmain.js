@@ -52,7 +52,7 @@ function loadLoggedInUser (username) {
     loginArea.innerHTML = `
         <h3> Hi <i>${username}</i></h3>
         <a href="/logout-blog">Logout</a><br>
-        <a href="">write an article</a>
+        <a href="/article-write">write an article</a>
     `;
 }
 function loadLogin () {
