@@ -317,12 +317,12 @@ app.post('/insert-article', function (req, res) {
    var title = req.body.title;
    var heading = req.body.heading;
    var content=req.body.content;
-   pool.query('INSERT INTO article (title,content, heading) VALUES ($1, $2, $3)', [title, content, heading], function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send('Article sucessfully uploaded :'+ title);
-      }
-   });
+//   pool.query('INSERT INTO article (title,content, heading) VALUES ($1, $2, $3)', [title, content, heading], function (err, result) {
+//       if (err) {
+//           res.status(500).send(err.toString());
+//       } else {
+//           res.send('Article sucessfully uploaded :'+ title);
+//       }
+//   });
 });
 
