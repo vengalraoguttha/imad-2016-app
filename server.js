@@ -72,7 +72,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/about-developer', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'aboutDeveloper.html'));
 });
 
 
