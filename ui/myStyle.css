@@ -18,3 +18,9 @@
 .pass{
     margin-top: 10px;
 }
+#articlesArea{
+    align-content: center;
+    margin: auto;
+    width: 338px;
+    text-align:center;
+}
