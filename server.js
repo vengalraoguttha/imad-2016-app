@@ -71,6 +71,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
 });
 
+app.get('/about-developer', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
 
 function hash (input, salt) {
     // How do we create a hash?
