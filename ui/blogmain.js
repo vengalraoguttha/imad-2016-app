@@ -1,7 +1,7 @@
 function loadLoginForm(){
     
-    var loginHtml = `Username:<input type="text" id="username"/><br>
-            Password:<input type="password" id="password"><br>
+    var loginHtml = `<div class="inputtext">Username:<input type="text" id="username"/><br>
+            Password:<input type="password" id="password"></div><br>
             <input type="submit" value="submit" id="btn_login"><br>
             <a href="/registration.html">not yet registered..</a>
         `;
