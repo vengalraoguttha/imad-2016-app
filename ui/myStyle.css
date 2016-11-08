@@ -10,7 +10,8 @@
     align-content: center;
     margin: auto;
     width: 338px;
+    text-align:center;
 }
 .inputtext{
-    text-align: left;
+    text-align: right;
 }
